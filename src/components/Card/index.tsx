@@ -14,8 +14,8 @@ import { AiFillEdit } from "react-icons/ai";
 import { FaTrash } from "react-icons/fa";
 import { CircularProgress, CircularProgressLabel } from "@chakra-ui/react";
 import { ModalViewExpenses } from "../Modais/viewExpenses";
-import { ModalAddExpense } from "../../components/Modais/addExpense";
-import { ModalEditBudget } from "../../components/Modais/editBudget";
+import { ModalAddExpense } from "../../components/Expense/Modal/Create/index"
+import { ModalEditBudget } from "../../components/Budget/Modal/Update/index";
 import { useAuth } from "../../providers/AuthContext";
 import { useExpenses } from "../../providers/ExpensesContext";
 import { useEffect } from "react";

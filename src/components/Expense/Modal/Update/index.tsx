@@ -14,12 +14,12 @@ import {
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useAuth } from "../../providers/AuthContext/index";
-import { useExpenses } from "../../providers/ExpensesContext/index";
-import { InputForm } from "../Input";
-import { InputMaskedCurrency } from "../Input/inputMasked";
+import { useAuth } from "../../../../providers/AuthContext/index";
+import { useExpenses } from "../../../../providers/ExpensesContext/index";
+import { InputForm } from "../../../Input";
+import { InputMaskedCurrency } from "../../../Input/inputMasked";
 
-import {createAndUpdateExpenseSchema} from "../../schemas/expense.schema"
+import {createAndUpdateExpenseSchema} from "../../../../schemas/expense.schema"
 
 
 interface ModalData {

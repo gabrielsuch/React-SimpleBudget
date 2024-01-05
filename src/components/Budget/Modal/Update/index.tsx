@@ -13,14 +13,14 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useAuth } from "../../providers/AuthContext";
-import { useBudgets } from "../../providers/BudgetsContext";
-import * as yup from "yup";
-import { InputForm } from "../Input";
-import { InputMaskedCurrency } from "../Input/inputMasked";
-import { formatToCurrency } from "../Input/masks";
+import { useAuth } from "../../../../providers/AuthContext";
+import { useBudgets } from "../../../../providers/BudgetsContext";
+import { InputForm } from "../../../Input";
+import { InputMaskedCurrency } from "../../../Input/inputMasked";
+import { formatToCurrency } from "../../../Input/masks";
 
-import {createAndUpdateBudgetSchema} from "../../schemas/budget.schema"
+import {createAndUpdateBudgetSchema} from "../../../../schemas/budget.schema"
+// import {TCreateAndUpdateBudget} from "../../../../types/budget.type"
 
 
 interface ModalEditBudgetData {

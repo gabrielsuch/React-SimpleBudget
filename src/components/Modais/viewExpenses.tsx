@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 
 import { useExpenses } from "../../providers/ExpensesContext";
-import { ModalEditExpense } from "./editExpense";
+import { ModalEditExpense } from "../Expense/Modal/Update/index";
 import { ExpenseCard } from "../Card/expenseCard";
 import EmptyStreet from "../../assets/Empty.svg";
 

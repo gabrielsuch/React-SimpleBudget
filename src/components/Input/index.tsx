@@ -16,7 +16,7 @@ interface InputProps {
   label?: string;
   error?: FieldError | null;
   icon?: IconType;
-  register: (user: any) => void;
+  register: Function
   value?: string;
   defaultValue?: string;
 }

@@ -15,12 +15,12 @@ import {
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useExpenses } from "../../providers/ExpensesContext";
-import { useAuth } from "../../providers/AuthContext";
-import { InputForm } from "../Input";
-import { InputMaskedCurrency } from "../Input/inputMasked";
+import { useExpenses } from "../../../../providers/ExpensesContext";
+import { useAuth } from "../../../../providers/AuthContext";
+import { InputForm } from "../../../Input";
+import { InputMaskedCurrency } from "../../../Input/inputMasked";
 
-import {createAndUpdateExpenseSchema} from "../../schemas/expense.schema"
+import {createAndUpdateExpenseSchema} from "../../../../schemas/expense.schema"
 
 
 interface ModalData {

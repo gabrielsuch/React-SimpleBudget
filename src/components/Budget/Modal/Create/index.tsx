@@ -13,15 +13,12 @@ import {
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useAuth } from "../../providers/AuthContext";
-import { useBudgets } from "../../providers/BudgetsContext";
-import { InputForm } from "../Input";
-import { InputMaskedCurrency } from "../Input/inputMasked";
+import { useAuth } from "../../../../providers/AuthContext/index"
+import { useBudgets } from "../../../../providers/BudgetsContext";
+import { InputForm } from "../../../Input/index";
+import { InputMaskedCurrency } from "../../../Input/inputMasked";
 
-const schema = yup.object().shape({
-  name: yup.string().required("Name required"),
-  max_value: yup.string().required("Max value required"),
-});
+import {createAndUpdateBudgetSchema} from "../../../../schemas/budget.schema"
 
 interface ModalData {
   name: string;
@@ -83,8 +80,8 @@ export const ModalAddBudget = ({ isOpen, onClose }: ModalAddBudgetProps) => {
     register,
     reset,
   } = useForm<ModalData>({
-    resolver: yupResolver(schema),
-  });
+    resolver: yupResolver(createAndUpdateBudgetSchema)
+  })
 
   return (
     <>

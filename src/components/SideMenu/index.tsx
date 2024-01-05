@@ -2,7 +2,7 @@ import { Box, Flex, Image, useDisclosure } from "@chakra-ui/react";
 import { BsPlusCircleFill } from "react-icons/bs";
 import { IoExitOutline } from "react-icons/io5";
 import { AiOutlineHome, AiOutlinePieChart } from "react-icons/ai";
-import { ModalAddBudget } from "../Modais/addBudget";
+import { ModalAddBudget } from "../Budget/Modal/Create/index";
 import { useAuth } from "../../providers/AuthContext";
 import logo from "../../assets/LogoSm.svg";
 import { useHistory } from "react-router-dom";

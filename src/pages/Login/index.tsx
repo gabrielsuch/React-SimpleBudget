@@ -16,7 +16,6 @@ import {
 
 import { useHistory } from "react-router-dom";
 
-import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -29,6 +28,9 @@ import { FaEnvelope, FaLock } from "react-icons/fa";
 
 import { InputForm } from "../../components/Input/index";
 
+import {loginSchema} from "../../schemas/user.schema"
+
+
 interface LoginProps {
   email: string;
   password: string;
@@ -39,17 +41,12 @@ export const Login = () => {
 
   const { login } = useAuth();
 
-  const schema = yup.object().shape({
-    email: yup.string().required("Required field").email("Invalid email"),
-    password: yup.string().required("Required field"),
-  });
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<LoginProps>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(loginSchema),
   });
 
   const toast = useToast();

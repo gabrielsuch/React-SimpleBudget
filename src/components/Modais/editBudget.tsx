@@ -20,6 +20,9 @@ import { InputForm } from "../Input";
 import { InputMaskedCurrency } from "../Input/inputMasked";
 import { formatToCurrency } from "../Input/masks";
 
+import {createAndUpdateBudgetSchema} from "../../schemas/budget.schema"
+
+
 interface ModalEditBudgetData {
   name: string;
   max_value: string;
@@ -35,10 +38,6 @@ interface ModalEditBudgetProps {
   onClose: () => void;
 }
 
-const schema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  max_value: yup.string().required("Max value is required"),
-});
 
 export const ModalEditBudget = ({
   isOpen,
@@ -59,7 +58,7 @@ export const ModalEditBudget = ({
     register,
     reset,
   } = useForm<ModalEditBudgetData>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(createAndUpdateBudgetSchema),
   });
 
   const toast = useToast();

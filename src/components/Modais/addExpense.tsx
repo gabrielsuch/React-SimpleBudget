@@ -14,19 +14,14 @@ import {
   Heading,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
-import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useExpenses } from "../../providers/ExpensesContext";
 import { useAuth } from "../../providers/AuthContext";
 import { InputForm } from "../Input";
 import { InputMaskedCurrency } from "../Input/inputMasked";
 
-const schema = yup.object().shape({
-  name: yup.string().required("Name is required"),
-  description: yup.string().required("Description is required"),
-  amount: yup.string().required("Amount is required"),
-  type: yup.string().required("Choose a category"),
-});
+import {createAndUpdateExpenseSchema} from "../../schemas/expense.schema"
+
 
 interface ModalData {
   name: string;
@@ -92,8 +87,8 @@ export const ModalAddExpense = ({
     register,
     reset,
   } = useForm<ModalData>({
-    resolver: yupResolver(schema),
-  });
+    resolver: yupResolver(createAndUpdateExpenseSchema)
+  })
 
   return (
     <>

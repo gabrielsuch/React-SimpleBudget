@@ -31,6 +31,9 @@ import { FaUser, FaEnvelope, FaLock } from "react-icons/fa";
 
 import { InputForm } from "../../components/Input/index";
 
+import {createUserSchema} from "../../schemas/user.schema"
+
+
 interface DataProps {
   name: string;
   email: string;
@@ -41,22 +44,12 @@ interface DataProps {
 export const Signup = () => {
   const { createRegister } = useAuth();
 
-  const schema = yup.object().shape({
-    name: yup.string().required("Required field"),
-    email: yup.string().required("Required field").email("Invalid email"),
-    password: yup.string().required("Required field"),
-    confirm_password: yup
-      .string()
-      .required("Required field")
-      .oneOf([yup.ref("password")], "Passwords didn't match"),
-  });
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<DataProps>({
-    resolver: yupResolver(schema),
+    resolver: yupResolver(createUserSchema),
   });
 
   const sendData = (data: DataProps) => {

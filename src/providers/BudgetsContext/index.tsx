@@ -51,7 +51,6 @@ const useBudgets = () => {
 
 const BudgetsProvider = ({ children }: BudgetProviderProps) => {
   const [budgets, setBudgets] = useState<Budget[]>([]);
-  const [errMessage, setErrMessage] = useState<string>("");
 
   const listBudgets = useCallback(
     async (userId: number, accessToken: string) => {

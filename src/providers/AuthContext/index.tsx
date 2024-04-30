@@ -3,7 +3,6 @@ import { api } from "../../services/api";
 import { useToast } from "@chakra-ui/react";
 
 import { useHistory } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 
 interface AuthProviderProps {
   children: ReactNode;

@@ -15,7 +15,6 @@ import {
 import { CardSkeleton } from "../../components/Loading";
 
 import { useAuth } from "../../providers/AuthContext";
-//import {Redirect} from "react-router-dom"
 
 export const Dashboard = () => {
   const [loading, setLoading] = useState(true);
